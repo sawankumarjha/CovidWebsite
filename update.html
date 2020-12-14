@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <title>CovidWeb-Update</title>
+
+    </head>
+
+    <body>
+        <nav class="navigation">
+            <a href="index.html">Home</a>
+            <a href="prevention.html">Prevention</a>
+            <a href="symptoms.html">Symptoms</a>
+            <a href="#" id="active">Update</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <!-- /************Cases Table******************* -->
+        <h1 id="tableHeading">Statewise Covid-19 Cases In India</h1>
+        <table id="tbl">
+
+            <tr>
+                <th>States</th>
+                <th>Confirmed Cases</th>
+                <th>Active Cases</th>
+                <th>Deaths</th>
+                <th>Recovery</th>
+            </tr>
+
+
+        </table>
+
+
+        <!-- /***************Footer*******************/ -->
+        <footer>
+            <h2><i class="fa fa-copyright" aria-hidden="true"></i> <span id="date"></span> All Rights Reserved</h2>
+        </footer>
+        <script>
+            let ar = [];
+            fetch('https://api.covid19india.org/data.json').then((adata) => {
+                return adata.json();
+            }).then((actdata) => {
+                ar = actdata.statewise;
+                for (let i = 1; i < ar.length; i++) {
+                    let tbl = document.getElementById('tbl');
+                    let newTr = document.createElement('tr');
+                    newTr.innerHTML = ` <tr>
+                         <td>${ar[i].state}</td>
+                         <td>${ar[i].confirmed}</td>
+                        <td>${ar[i].active}</td>
+                        <td>${ar[i].deaths}</td>
+                        <td>${ar[i].recovered}</td>
+                        </tr>`;
+                    tbl.appendChild(newTr);
+                }
+            })
+
+
+
+            $(document).ready(function () {
+                let year = document.getElementById('date');
+                let dt = new Date();
+                year.innerHTML = dt.getFullYear();
+            });
+        </script>
+    </body>
+
+</html>

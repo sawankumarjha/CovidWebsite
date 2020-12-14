@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <title>CovidWeb-Prevention</title>
+
+    </head>
+
+    <body>
+        <nav class="navigation">
+            <a href="index.html">Home</a>
+            <a href="#" id="active">Prevention</a>
+            <a href="symptoms.html">Symptoms</a>
+            <a href="update.html">Update</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+
+        <!-- ******************prevention***************** -->
+        <h1 id="preventionHeading">PREVENTION OF CORONA VIRUS</h1>
+        <div class="prevention">
+            <div>
+                <img src="social-distancing.png" alt="Not Found">
+                <h2>Social Distancing</h2>
+                <p>If you’re carrying the SARS-CoV-2 virus, it’ll be found in high amounts in your spit (sputum). This
+                    can happen even if you don’t have symptoms. Physical (social) distancing, also means staying home
+                    and working remotely when possible. If you must go out for necessities, keep a distance of 6 feet (2
+                    m) from other people. You can transmit the virus by speaking to someone in close contact to you.
+                </p>
+            </div>
+            <div>
+                <img src="mask.png" alt="Not Found">
+                <h2>Wear Mask</h2>
+                <p>SARS-CoV-2 is found in high amounts in the nose and mouth. This means it can be carried by air
+                    droplets to other people when you cough, sneeze, or talk. It can also land on hard surfaces and stay
+                    there for up to 3 days. Use a tissue or sneeze into your elbow to keep your hands as clean as
+                    possible. Wash your hands carefully after you sneeze or cough, regardless.
+                </p>
+            </div>
+            <div>
+                <img src="handwash.png" alt="Not Found">
+                <h2>Hand Wash</h2>
+                <p>Use warm water and soap and rub your hands for at least 20 seconds. Work the lather to your wrists,
+                    between your fingers,and under your fingernails. You can also use an antibacterial and antiviral
+                    soap. Use hand sanitizer when you cannot wash your hands properly. Rewash your hands several times a
+                    day, especially after touching anything, including your phone or laptop.
+                </p>
+            </div>
+
+
+        </div>
+        <!-- /***************Footer*******************/ -->
+        <footer>
+            <h2><i class="fa fa-copyright" aria-hidden="true"></i> <span id="date"></span> All Rights Reserved</h2>
+        </footer>
+        <script>
+            $(document).ready(function () {
+                let year = document.getElementById('date');
+                let dt = new Date();
+                year.innerHTML = dt.getFullYear();
+            });
+        </script>
+    </body>
+
+</html>

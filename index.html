@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <title>CovidWeb</title>
+
+    </head>
+
+    <body>
+        <nav class="navigation">
+            <a href="#" id="active">Home</a>
+            <a href="prevention.html">Prevention</a>
+            <a href="symptoms.html">Symptoms</a>
+            <a href="update.html">Update</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <!-- ******************Poster***************** -->
+        <div class="poster">
+            <div class="posterLeft">
+                <h1>Thank You</h1>
+                <h2>For Being a life Saver !</h2>
+                <a href="#">Contact us</a>
+            </div>
+            <div class="posterRight">
+                <div>
+                    <img src="thankyou.png" alt="Not Found">
+                </div>
+            </div>
+        </div>
+
+        <!-- /************Total Covid Cases in Global************* -->
+        <h1 id="totalCasesHeading">COVID-19 CASES IN WORLD</h1>
+        <div class="totalCases">
+            <div>
+                <h1 id="tc"></h1>
+                <h2>Confirmed</h2>
+            </div>
+            <div>
+                <h1 id="td"></h1>
+                <h2>Deaths</h2>
+            </div>
+            <div>
+                <h1 id="tr"></h1>
+                <h2>Recoverd</h2>
+            </div>
+        </div>
+        <!-- /***************Footer*******************/ -->
+        <footer>
+            <h2><i class="fa fa-copyright" aria-hidden="true"></i> <span id="date"></span> All Rights Reserved</h2>
+        </footer>
+        <script>
+
+
+            $(document).ready(function () {
+
+                let year = document.getElementById('date');
+                let dt = new Date();
+                year.innerHTML = dt.getFullYear();
+                fetch('https://api.covid19api.com/summary').then((adata) => {
+                    return adata.json();
+                }).then((actdata) => {
+                  
+                    document.getElementById('tc').innerHTML = actdata.Global.TotalConfirmed;
+                    document.getElementById('td').innerHTML = actdata.Global.TotalDeaths;
+                    document.getElementById('tr').innerHTML = actdata.Global.TotalRecovered;
+
+                })
+
+            });
+        </script>
+    </body>
+
+</html>

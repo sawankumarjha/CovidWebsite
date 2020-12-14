@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <title>CovidWeb-Symptoms</title>
+
+    </head>
+
+    <body>
+        <nav class="navigation">
+            <a href="index.html">Home</a>
+            <a href="prevention.html">Prevention</a>
+            <a href="#" id="active">Symptoms</a>
+            <a href="update.html">Update</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+
+        <!-- ******************Symptoms***************** -->
+        <h1 id="preventionHeading">SYMPTOMS OF CORONA VIRUS</h1>
+        <div class="symptoms">
+            <div>
+                <img src="cough.png" alt="Not Found">
+                <h2>Cough</h2>
+
+            </div>
+            <div>
+                <img src="fever.png" alt="Not Found">
+                <h2>fever</h2>
+
+            </div>
+            <div>
+                <img src="chest-pain-or-pressure.png" alt="Not Found">
+                <h2>Chest pain</h2>
+
+            </div>
+            <div>
+                <img src="sore-throat.png" alt="Not Found">
+                <h2>Sore Throat</h2>
+
+            </div>
+            <div>
+                <img src="tiredness.png" alt="Not Found">
+                <h2>Tiredness</h2>
+
+            </div>
+            <div>
+                <img src="headache.png" alt="Not Found">
+                <h2>Headache</h2>
+
+            </div>
+
+        </div>
+        <!-- /***************Footer*******************/ -->
+        <footer>
+            <h2><i class="fa fa-copyright" aria-hidden="true"></i> <span id="date"></span> All Rights Reserved</h2>
+        </footer>
+        <script>
+            $(document).ready(function () {
+                let year = document.getElementById('date');
+                let dt = new Date();
+                year.innerHTML = dt.getFullYear();
+            });
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,450 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #151414;
+    font-family: Bahnschrift;
+    color: white;
+    text-transform: capitalize;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+:root {
+    --innerShadow: inset 0px 0px 9px 9px #00000066;
+    --outerShadow: 0px 0px 9px 6px #00000066;
+    --buttonShadow: 0px 0px 8px 3px rgb(169, 252, 3);
+    --innerButtonShadow: inset 0px 0px 8px 3px rgb(169, 252, 3);
+    --differColor: rgb(169, 252, 3);
+}
+
+#active {
+    color: var(--differColor);
+    transform: scale(0.9, 0.9);
+}
+
+.navigation {
+    position: fixed;
+    top: 0px;
+    content: "";
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 7vh;
+    padding: 10px;
+    z-index: 1;
+    background-color: #151414;
+}
+
+.navigation a {
+    margin: 0px 10px;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 6px 10px;
+    transition-property: all;
+    transition-timing-function: linear;
+    transition-delay: 0.2s;
+    transition-duration: 0.4s;
+}
+
+.navigation a:hover {
+    color: var(--differColor);
+    transform: scale(0.9, 0.9);
+}
+
+/* Heading Styles and Div transition*/
+#preventionHeading,
+#symptomsheading,
+#totalCasesHeading,
+#tableHeading,
+#contactInfo {
+    text-transform: uppercase;
+    margin-top: 10vh;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#totalCasesHeading {
+    margin: 20px 0px;
+}
+
+.symptoms div,
+.prevention div {
+    transition-property: all;
+    transition-timing-function: linear;
+    transition-delay: 0.2s;
+    transition-duration: 0.4s;
+}
+
+.symptoms div:hover,
+.prevention div:hover {
+    box-shadow: var(--innerButtonShadow);
+    transform: scale(0.9, 0.9);
+    border-radius: 0px;
+}
+
+/* Pooster Style */
+.poster {
+    width: 100%;
+    margin-top: 7vh;
+    height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.posterLeft {
+    width: 40%;
+    padding-left: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.posterLeft h1 {
+    color: var(--differColor);
+    font-size: 4rem;
+    text-shadow: 0px 0px 2px white;
+}
+
+.posterLeft h2 {
+    font-size: 3rem;
+}
+
+.posterLeft a {
+    margin-top: 10px;
+    box-shadow: var(--buttonShadow);
+    width: 150px;
+    text-align: center;
+    font-weight: bold;
+    padding: 6px 10px;
+    border: 2px solid rgb(169, 252, 3);
+    border-radius: 10px;
+}
+
+.posterLeft a:hover {
+    transform: scale(0.9, 0.9);
+    box-shadow: var(--innerShadow);
+    border: 2px solid transparent;
+    color: rgb(169, 252, 3);
+}
+
+.posterRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+.posterRight div {
+    box-shadow: var(--innerShadow);
+}
+.posterRight div img {
+    filter: drop-shadow(0px 0px 4px var(--differColor));
+    width: 100%;
+}
+
+/* Symptoms , Prevention and contact*/
+.symptoms,
+.prevention,
+.totalCases {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 10px 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+.symptoms div,
+.prevention div,
+.contact div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 20px;
+    width: 30%;
+    padding: 10px;
+    box-shadow: var(--outerShadow);
+    border-radius: 50px;
+}
+.symptoms div {
+    border-radius: 50%;
+}
+.contact div {
+    border-radius: 50%;
+    height: 30vh;
+    box-shadow: var(--innerShadow);
+}
+.contact,
+#contactForm {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10%;
+    text-align: center;
+}
+.contact div i {
+    margin: 10px 0px;
+}
+#phone {
+    color: blue;
+}
+#email {
+    color: maroon;
+}
+#location {
+    color: #64b5f6;
+}
+.contact div h3 {
+    margin: 5px 0px;
+}
+#contactForm div {
+    width: 50%;
+}
+.formLeft input {
+    display: block;
+    color: white;
+    padding: 10px 10px;
+    outline: none;
+    border: none;
+    width: 80%;
+    margin: 30px 10%;
+    box-shadow: var(--outerShadow);
+    background-color: transparent;
+    border-radius: 10px;
+}
+.formLeft input:hover,
+.formRight textarea:hover {
+    box-shadow: var(--innerShadow);
+}
+.formRight textarea {
+    display: block;
+    color: white;
+    padding: 6px 10px;
+    box-shadow: var(--outerShadow);
+    background-color: transparent;
+    width: 80%;
+    height: 20vh;
+    outline: none;
+    border: none;
+    margin: 20px 10%;
+}
+.formBtn {
+    width: 150px;
+    font-size: 18px;
+    padding: 6px 10px;
+    cursor: pointer;
+    margin: 10px;
+    outline: none;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    color: var(--differColor);
+    box-shadow: 0px 5px 9px -5px var(--differColor);
+    border: 2px solid var(--differColor);
+}
+.formBtn:hover {
+    box-shadow: var(--innerShadow);
+    transform: scale(0.9, 0.9);
+    border: 2px solid transparent;
+}
+.symptoms div h2,
+.prevention div h2,
+.contact div h2 {
+    margin: 5px 0px;
+}
+
+.symptoms div img,
+.prevention div img {
+    width: 200px;
+}
+
+/********Total Cases***********/
+.totalCases div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 20px;
+    width: 30%;
+    height: 40vh;
+    padding: 10px;
+    box-shadow: var(--innerShadow);
+    border-radius: 50%;
+    animation: pulse 1s ease infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: var(--innerShadow);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: var(--buttonShadow);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: var(--innerShadow);
+    }
+}
+/* ***********Table************/
+#tbl {
+    padding: 10px;
+    width: 90%;
+    margin: 10px 5%;
+    box-shadow: var(--outerShadow);
+}
+#tbl th {
+    border: 1px solid white;
+    padding: 10px 0px;
+    text-transform: uppercase;
+    color: var(--differColor);
+}
+#tbl td {
+    padding: 5px 10px;
+    border: 1px solid white;
+}
+#tbl td:hover {
+    color: var(--differColor);
+}
+/**Confirm******/
+#confirm {
+    position: fixed;
+    display: none;
+    top: 30vh;
+    width: 30%;
+    margin: 0px 35%;
+    height: 30vh;
+    box-shadow: var(--outerShadow);
+    background-color: #1b1a1a;
+    padding: 30px;
+}
+#confirm h2 {
+    color: var(--differColor);
+    margin-bottom: 20px;
+}
+
+#confirm a {
+    margin: 0px 20px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    color: var(--differColor);
+    padding: 6px 10px;
+    box-shadow: 0px 5px 9px -5px var(--differColor);
+    border: 2px solid var(--differColor);
+}
+#confirm a:hover {
+    box-shadow: var(--innerShadow);
+    transform: scale(0.8, 0.8);
+    border: 2px solid transparent;
+}
+/***********Footer************/
+footer {
+    text-align: center;
+    margin: 10px 0px;
+    color: var(--differColor);
+}
+/*************Responsive************/
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    #confirm {
+        width: 50%;
+        margin: 0px 25%;
+    }
+    .totalCases div {
+        width: 40%;
+        height: 30vh;
+    }
+}
+@media screen and (min-device-width: 200px) and (max-device-width: 600px) {
+    #confirm {
+        width: 90%;
+        margin: 0px 5%;
+    }
+    #tbl {
+        padding: 10px;
+        width: 100%;
+        margin: 10px 0%;
+        box-shadow: var(--outerShadow);
+    }
+    .totalCases div {
+        width: 60%;
+        height: 40vh;
+    }
+
+    .navigation {
+        padding: 5px;
+        height: 11vh;
+    }
+    #preventionHeading,
+    #symptomsheading,
+    #totalCasesHeading,
+    #tableHeading,
+    #contactInfo {
+        margin-top: 14vh;
+    }
+    .posterLeft h1 {
+        color: var(--differColor);
+        font-size: 3rem;
+        text-shadow: 0px 0px 2px white;
+    }
+
+    .posterLeft h2 {
+        font-size: 2rem;
+    }
+    .poster {
+        margin-top: 14vh;
+        height: 100%;
+
+        flex-direction: column-reverse;
+    }
+}
+@media screen and (min-device-width: 200px) and (max-device-width: 1024px) {
+    .poster {
+        height: 100%;
+
+        flex-direction: column-reverse;
+    }
+
+    .posterLeft {
+        width: 100%;
+        align-items: center;
+        padding-left: 0px;
+        text-align: center;
+    }
+    .symptoms div,
+    .prevention div,
+    .contact div {
+        width: 100%;
+    }
+
+    .posterRight div {
+        box-shadow: none;
+    }
+
+    #contactForm div {
+        width: 100%;
+    }
+    .symptoms,
+    .prevention,
+    .totalCases {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 10px 5%;
+        justify-content: center;
+        align-items: center;
+    }
+}
